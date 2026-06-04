@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap");
 
 html {
   scroll-behavior: smooth;
@@ -7,7 +7,7 @@ html {
 * {
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -52,18 +52,18 @@ body {
   font-size: 15px;
   color: #ccc;
   position: relative;
-  transition: color .2s;
+  transition: color 0.2s;
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
   width: 0;
   height: 2px;
   background: #cc0000;
-  transition: width .25s ease;
+  transition: width 0.25s ease;
 }
 
 .nav-link:hover {
@@ -91,7 +91,7 @@ body {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   border-radius: 4px;
-  transition: background .2s ease;
+  transition: background 0.2s ease;
 }
 
 .btn-contact:hover {
@@ -137,7 +137,7 @@ body {
   letter-spacing: 1px;
   text-transform: uppercase;
   border-radius: 4px;
-  transition: background .2s ease;
+  transition: background 0.2s ease;
 }
 
 .btn-primary:hover {
@@ -162,7 +162,7 @@ body {
 }
 
 .search-section h2::after {
-  content: '';
+  content: "";
   display: block;
   width: 48px;
   height: 3px;
@@ -181,13 +181,27 @@ body {
 }
 
 .search-bar input {
-  flex: 1;
   padding: 14px 20px;
   font-size: 15px;
   border: none;
   outline: none;
   background: #ffffff;
   color: #111111;
+}
+
+#search-input {
+  flex: 1;
+}
+
+#year-input {
+  width: 100px;
+  border-left: 2px solid #e0e0e0;
+  text-align: center;
+}
+
+#year-input::-webkit-inner-spin-button,
+#year-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
 }
 
 .search-bar button {
@@ -200,7 +214,7 @@ body {
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: background .2s ease;
+  transition: background 0.2s ease;
   white-space: nowrap;
 }
 
@@ -211,21 +225,24 @@ body {
 /* ── Results ─────────────────────────────────── */
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
 .movie-card {
   border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 2px 12px rgba(0,0,0,.12);
-  transition: transform .2s ease, box-shadow .2s ease;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   background: #ffffff;
+  flex-wrap: wrap;
 }
 
 .movie-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 8px 28px rgba(0,0,0,.18);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
 }
 
 .movie-card img {
@@ -312,7 +329,7 @@ body {
   }
 
   .results-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
   }
 }
@@ -363,6 +380,12 @@ body {
   .search-bar input {
     border: 2px solid #111111;
     border-radius: 4px;
+    width: 100%;
+    text-align: left;
+  }
+
+  #year-input {
+    border-left: 2px solid #111111;
     width: 100%;
   }
 

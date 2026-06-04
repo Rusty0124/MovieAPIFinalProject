@@ -1,11 +1,13 @@
 const BASE_URL = "http://www.omdbapi.com/?apikey=23d1ebb4&";
 
 const searchInput = document.getElementById("search-input");
+const yearInput = document.getElementById("year-input");
 const searchBtn = document.getElementById("search-btn");
 const resultsGrid = document.getElementById("results");
 
-async function searchMovies(query) {
-  const response = await fetch(`${BASE_URL}s=${(query)}`);
+async function searchMovies(query, year) {
+  const yearParam = year ? `&y=${year}` : "";
+  const response = await fetch(`${BASE_URL}s=${query}${yearParam}`);
   const data = await response.json();
 
   if (data.Response === "False") {
@@ -22,6 +24,7 @@ async function getMovieDetails(imdbID) {
 }
 
 function renderResults(movies) {
+  console.log(movies);
   resultsGrid.innerHTML = movies
     .slice(0, 6)
     .map(
@@ -60,8 +63,10 @@ async function handleSearch() {
 
   renderLoading();
 
+  const year = yearInput.value.trim();
+
   try {
-    const movies = await searchMovies(query);
+    const movies = await searchMovies(query, year);
     renderResults(movies);
   } catch (error) {
     renderError(error.message);
