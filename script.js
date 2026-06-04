@@ -1,4 +1,4 @@
-const BASE_URL = "http://www.omdbapi.com/?apikey=23d1ebb4&";
+const BASE_URL = "https://www.omdbapi.com/?apikey=23d1ebb4&";
 
 const searchInput = document.getElementById("search-input");
 const yearInput = document.getElementById("year-input");
