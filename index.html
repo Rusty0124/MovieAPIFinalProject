@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="navbar">
+      <nav class="nav-inner">
+        <div class="nav-links">
+          <a href="#" class="nav-link active">Home</a>
+          <a href="#search" class="nav-link">Find A Movie</a>
+        </div>
+        <a href="#contact" class="btn-contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Discover Your Next <span>Favorite Movie</span></h1>
+      <p>Search millions of titles instantly.</p>
+      <a href="#search" class="btn-primary">Start Searching</a>
+    </section>
+
+    <section id="search" class="search-section">
+      <h2>Find A Movie</h2>
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Search by title..." />
+        <button id="search-btn">Search</button>
+      </div>
+      <div id="results" class="results-grid"></div>
+    </section>
+
+    <footer id="contact" class="footer">
+      <p>Have a question? <a href="mailto:hello@movieapp.com">hello@movieapp.com</a></p>
+      <p class="footer-copy">&copy; 2026 Movie Search</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
